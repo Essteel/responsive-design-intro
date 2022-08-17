@@ -6,12 +6,12 @@ body {
 
 article {
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
 }
 
 nav {
     background: #5995da;
-    flex: 1 50px;
+    min-height: 50px;
 }
 
 header {
@@ -20,7 +20,6 @@ header {
 
 main {
     background: #eaedf0;
-    /* flex: 6 100%vw; */
     padding: 1rem;
 }
 
@@ -51,33 +50,24 @@ header, section, nav {
     align-items:center;
 }
 
+header, section, nav, main {
+    flex: 100%;
+}
+
 /* Tablet style devices */
 @media screen and (min-width: 500px) and (max-width: 899px) {
-    article {
-        flex-flow: row wrap;
-    }
-    nav {
-        flex: 100%;
-        min-height: 50px;
-    }
     section {
         height: 50vw;
+        flex: 50%;
     }
 }
 
 /* Large devices */
 
 @media screen and (min-width: 900px) {
-    article {
-        flex-flow: row wrap;
-    }
-    nav {
-        flex: 100%;
-        min-height: 50px;
-    }
     .feature {
-        flex: calc(100vw / 3);
-        min-height: calc(100vw / 3 * 1.25);
+        flex: calc(100% / 3);
+        min-height: 50vh;
     }
     #signup {
         order: 1;
@@ -85,8 +75,7 @@ header, section, nav {
         height: 150px;
     }
     header {
-        flex: 100vw;
-        height: 25vw;
+        height: 35vh;
     }
     main {
         order: 2;
